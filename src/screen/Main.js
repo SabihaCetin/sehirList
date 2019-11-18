@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {View, FlatList, Text, TouchableOpacity, Image} from 'react-native';
-import List from './component/List';
-import SearchInput from './component/SearchInput';
+import List from '../component/List';
+import SearchInput from '../component/SearchInput';
 
 const Main = ({navigation}) => {
 
@@ -20,27 +20,18 @@ const Main = ({navigation}) => {
 
     const onSearch = async (query) => {
         try {
-
             let result = [];
-
-
             for (const item of data) {
                 if (item) {
                     if (item.tanim.toLocaleLowerCase('tr').includes(query)) {
                         result.push(item);
-
                     }
                 }
-
             }
-
             setResultList(result);
-         if(search===''){
-           setResultList('');
-         }
-
-
-
+            if (search === '') {
+                setResultList('');
+            }
         } catch (e) {
             console.log(e);
         }
@@ -64,8 +55,6 @@ const Main = ({navigation}) => {
                 .then(data => {
                     resolve(data);
                     setData(data);
-                    console.log('data');
-                    console.log(data);
                 }).catch(err => reject(err));
         });
     };
@@ -75,18 +64,12 @@ const Main = ({navigation}) => {
             <SearchInput value={search}
                          onTextChange={value => {
                              setSearch(value.toLocaleLowerCase('tr'));
-                         }}
-            />
-            {search==='' ?
-                    <List data={data} navigation={navigation} nav={'MahalleList'}/>
-                    :
-                    <List data={resultList} navigation={navigation} nav={'MahalleList'}/>
+                         }}/>
+            {search === '' ?
+                <List data={data} navigation={navigation} nav={'MahalleList'}/>
+                :
+                <List data={resultList} navigation={navigation} nav={'MahalleList'}/>
             }
-
-
-
-
-
         </View>
     );
 };

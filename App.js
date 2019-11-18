@@ -1,33 +1,21 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React from 'react';
-
-
 
 import MainStack from './src/MainStack';
 
 
-
-import {createAppContainer} from "react-navigation";
+import {createAppContainer} from 'react-navigation';
 
 
 const AppContainer = createAppContainer(MainStack);
 
 
-const App= () => {
+const App = () => {
     return (
 
-                <AppContainer/>
+        <AppContainer/>
 
     );
 };
-
 
 
 export default App;

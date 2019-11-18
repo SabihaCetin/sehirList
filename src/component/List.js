@@ -1,17 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {TouchableOpacity, View, Text, FlatList, Image} from 'react-native';
+import {TouchableOpacity, View, Text, FlatList, Image, StyleSheet} from 'react-native';
 
 
 const List = ({navigation, data, nav = null}) => {
 
-    useEffect(() => {
-
-    }, []);
-
-
     return (
         <View>
-
 
             <FlatList
                 data={data}
@@ -26,19 +20,17 @@ const List = ({navigation, data, nav = null}) => {
                                     ilceId: item.id,
                                 });
                             }
-
                         }
-                        }
-                        >
-
+                        }>
                             <View style={{flexDirection: 'row'}}>
                                 <Image source={require('../../src/img/city-hall.png')}
-                                       style={{height: 20, width: 20, margin: 10}}/>
+                                       style={styles.iconImage}/>
                                 <Text style={{margin: 10, flex: 1}}>{item.tanim}</Text>
                                 <Image source={require('../../src/img/arrowRight.png')}
-                                       style={{height: 20, width: 20, margin: 10}}/>
+                                       style={styles.iconImage}/>
                             </View>
-                            <View style={{borderBottomWidth: 1, margin: 5, borderColor: '#919191'}}/>
+
+                            <View style={styles.line}/>
 
                         </TouchableOpacity>
                     );
@@ -51,3 +43,17 @@ const List = ({navigation, data, nav = null}) => {
 
 
 export default List;
+
+const styles =StyleSheet.create({
+    iconImage:{
+        height: 20,
+        width: 20,
+        margin: 10
+    },
+    line:{
+        borderBottomWidth: 1,
+        marginTop:5,
+        marginBottom:5,
+        borderColor: '#919191'
+    }
+})

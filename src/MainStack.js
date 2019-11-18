@@ -1,9 +1,9 @@
 import React from 'react';
 import {createStackNavigator} from 'react-navigation-stack';
-import Main from './Main';
-import MahalleList from './MahalleList';
+import Main from './screen/Main';
+import MahalleList from './screen/MahalleList';
 import List from './component/List';
-import {Image, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 
 
 const MainStack =
@@ -44,17 +44,5 @@ const MainStack =
         },
     );
 
-MainStack.navigationOptions = () => {
-
-    return {
-        header: (
-
-            <Text style={{fontWeight: 'bold', fontSize: 20, color: '#547ca6'}}>
-                İLÇE LİSTESİ
-            </Text>
-        ),
-    };
-};
 
 export default MainStack;
-

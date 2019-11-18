@@ -2,8 +2,6 @@ import React, {useEffect, useState} from 'react';
 import {Dimensions, Image, SafeAreaView, StyleSheet, TextInput, TouchableOpacity, View} from 'react-native';
 
 
-const deviceWidth = Dimensions.get('window').width;
-
 const SearchInput = ({value = '', onTextChange = null}) => {
 
     const [val, setVal] = useState(value);
