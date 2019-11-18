@@ -51,8 +51,6 @@ const MahalleList = ({navigation}) => {
 
         return new Promise(async (resolve, reject) => {
             let body = JSON.stringify({belediyeId: ilceId, userId: 1});
-            console.log('body');
-            console.log(body);
             return fetch('https://digikent.basaksehir.bel.tr:8091/VadiRestMobile/login/mahalle', {
                 method: 'post',
                 mode: 'no-cors',
@@ -87,7 +85,7 @@ const MahalleList = ({navigation}) => {
                         <View>
 
                             <View style={styles.itemView}>
-                                <Image source={require('../src/img/two-houses.png')}
+                                <Image source={require('../../src/img/two-houses.png')}
                                        style={styles.icon}/>
                                 <Text style={{margin: 10, flex: 1}}>{item.tanim}</Text>
 

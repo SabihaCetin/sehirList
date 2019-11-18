@@ -15,9 +15,12 @@ const MainStack =
                 screen: MahalleList,
                 navigationOptions: {
                     headerTitle:
-                        (<Text style={{fontWeight: 'bold', fontSize: 20, color: '#547ca6'}}>
+                        (
+                            <View style={{justifyContent:'center', alignItems:'center'}}>
+                                <Text style={{fontWeight: 'bold', fontSize: 20, color: '#547ca6'}}>
                             MAHALLE LİSTESİ
-                        </Text>),
+                        </Text>
+                            </View>),
                 },
             },
 
@@ -29,13 +32,18 @@ const MainStack =
             defaultNavigationOptions: {
 
                 headerTitle:
-                    (<Text style={{fontWeight: 'bold', fontSize: 20, color: '#547ca6'}}>
-                        İLÇE LİSTESİ
-                    </Text>),
+                    (
+                        <View style={{flex:1,justifyContent:'center', alignItems:'center'}}>
+                            <Text style={{fontWeight: 'bold', fontSize: 20, color: '#547ca6'}}>
+                                İLÇE LİSTESİ
+                            </Text>
+                        </View>
+
+                    ),
                 headerBackTitle: null,
                 headerBackImage: (
                     <Image source={require('../src/img/left-arrow.png')}
-                           style={{height: 20, width: 20, margin: 10}}/>
+                           style={{height: 20, width: 20,}}/>
                 ),
 
 
